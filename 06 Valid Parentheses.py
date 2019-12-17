@@ -1,3 +1,9 @@
+# Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+# An input string is valid if:
+# Open brackets must be closed by the same type of brackets.
+# Open brackets must be closed in the correct order.
+# Note that an empty string is also considered valid.
+
 input_string = input('Enter a string :')
 
 valid_dict = dict((['(',')'],['[',']'],['{','}']))
@@ -23,9 +29,11 @@ def valid_parentheses(input_string, valid_dict):
         return 'Valid String'
     else:
         return 'Invalid String'
-
-result = valid_parentheses(input_string, valid_dict)
-print(result)
+if len(input_string) == 0:
+    print('Valid String')
+else:
+    result = valid_parentheses(input_string, valid_dict)
+    print(result)
 
 
 
