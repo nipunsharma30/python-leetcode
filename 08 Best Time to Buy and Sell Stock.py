@@ -1,17 +1,20 @@
 
 array =[7,1,5,3,6,4]
 
-
-def profit(array):
+def buysell(array):
+    profit = 0
     buy = 0
-    sell = 0
-    profit = [0]
+    maxProfit = 0
     for i in range(len(array)):
-        buy = array[i]
-        for j in range(i+1,len(array)):
-            sell = array[j]
-            profit.append((sell - buy))
-    print('max profit is: ', max(profit))
+        if i == 0:
+            buy = array[i]
+            continue
+        if array[i] < buy:
+            buy = array[i]
+        else:
+            profit = array[i] - buy
+            if profit > maxProfit:
+                maxProfit = profit
+    print('Max profit is: ', maxProfit)
 
-profit(array)
-
+buysell(array)
